@@ -20,11 +20,6 @@
 
 <br>
 
-![](bitfield.png)
-
-
-[![Donate here](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/nholuong)
-
 ![](https://i.imgur.com/waxVImv.png)
 
 # Roadmaps are now interactive, you can click the nodes to read more about the topics.
