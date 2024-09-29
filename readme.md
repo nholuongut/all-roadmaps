@@ -110,7 +110,7 @@ Clone the repository, install the dependencies and start the application
 
 ```bash
 git clone git@github.com:nholuongut/all-roadmaps.git
-cd all-roadmap
+cd all-roadmaps
 npm install
 npm run dev
 ```
