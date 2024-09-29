@@ -1,0 +1,141 @@
+---
+import {
+  ArrowLeftIcon,
+  FolderKanbanIcon,
+  MapIcon,
+  MessageCircle,
+} from 'lucide-react';
+import { TabLink } from './TabLink';
+import LoginPopup from './AuthenticationFlow/LoginPopup.astro';
+import ProgressHelpPopup from './ProgressHelpPopup.astro';
+import { MarkFavorite } from './FeaturedItems/MarkFavorite';
+import { type RoadmapFrontmatter } from '../lib/roadmap';
+import { ShareRoadmapButton } from './ShareRoadmapButton';
+import { DownloadRoadmapButton } from './DownloadRoadmapButton';
+
+export interface Props {
+  title: string;
+  description: string;
+  note?: string;
+  tnsBannerLink?: string;
+  roadmapId: string;
+  isUpcoming?: boolean;
+  hasSearch?: boolean;
+  projectCount?: number;
+  question?: RoadmapFrontmatter['question'];
+  hasTopics?: boolean;
+  isForkable?: boolean;
+  activeTab?: 'roadmap' | 'projects';
+}
+
+const {
+  title,
+  description,
+  roadmapId,
+  tnsBannerLink,
+  isUpcoming = false,
+  note,
+  hasTopics = false,
+  projectCount = 0,
+  question,
+  activeTab = 'roadmap',
+} = Astro.props;
+
+const roadmapTitle =
+  roadmapId === 'devops'
+    ? 'DevOps'
+    : `${roadmapId.charAt(0).toUpperCase()}${roadmapId.slice(1)}`;
+
+const hasTnsBanner = !!tnsBannerLink;
+---
+
+<LoginPopup />
+<ProgressHelpPopup />
+
+<div class='container mt-0 flex flex-col gap-2.5 px-0 sm:mt-3 sm:px-4'>
+  {
+    tnsBannerLink && (
+      <div class='hidden rounded-md border bg-white px-2 py-1.5 sm:block'>
+        <p class='py-0.5 text-left text-sm'>
+          <span class='badge mr-1'>Partner</span>
+          Get the latest {roadmapTitle} news from our sister site{' '}
+          <a href={tnsBannerLink} target='_blank' class='font-medium underline'>
+            TheNewStack.io
+          </a>
+        </p>
+      </div>
+    )
+  }
+
+  <div
+    class='relative rounded-none border bg-white px-5 pb-0 pt-4 sm:rounded-lg'
+  >
+    <div class='flex items-start justify-between'>
+      <a
+        class='inline-flex items-center justify-center rounded-md bg-gray-300 px-2 py-1.5 text-xs font-medium hover:bg-gray-400 sm:hidden sm:text-sm'
+        aria-label='Back to roadmaps'
+        href={'/roadmaps'}
+      >
+        <ArrowLeftIcon className='h-4 w-4' />
+      </a>
+
+      <a
+        href='/roadmaps'
+        class='hidden rounded-md text-sm font-medium text-gray-500 transition-all hover:text-black focus:outline-0 sm:block'
+        aria-label='Back to All Roadmaps'
+      >
+        &larr;&nbsp;<span>&nbsp;All Roadmaps</span>
+      </a>
+      <div
+        class='relative right-0 top-0 flex items-center gap-1 sm:-right-2 sm:-top-0.5'
+      >
+        <MarkFavorite
+          resourceId={roadmapId}
+          resourceType='roadmap'
+          className='relative top-px mr-2 text-gray-500 !opacity-100 hover:text-gray-600 focus:outline-0 [&>svg]:h-4 [&>svg]:w-4 [&>svg]:stroke-gray-400 [&>svg]:stroke-[0.4] hover:[&>svg]:stroke-gray-600 sm:[&>svg]:h-4 sm:[&>svg]:w-4'
+          client:only='react'
+        />
+        <DownloadRoadmapButton roadmapId={roadmapId} client:idle />
+        <ShareRoadmapButton
+          description={description}
+          pageUrl={`https://roadmap.sh/${roadmapId}`}
+          client:idle
+        />
+      </div>
+    </div>
+    <div class='mb-5 mt-5 sm:mb-8 sm:mt-5'>
+      <h1 class='mb-0.5 text-2xl font-bold sm:mb-2 sm:text-3xl'>
+        {title}
+      </h1>
+      <p class='text-balance text-sm text-gray-500 sm:text-base'>
+        {description}
+      </p>
+    </div>
+
+    <div class='flex justify-between gap-2 sm:gap-0'>
+      <div class='relative top-px flex gap-1 sm:gap-3'>
+        <TabLink
+          url={`/${roadmapId}`}
+          icon={MapIcon}
+          isActive={activeTab === 'roadmap'}
+          text='Roadmap'
+        />
+        <TabLink
+          url={`/${roadmapId}/projects`}
+          icon={FolderKanbanIcon}
+          text='Projects'
+          isActive={activeTab === 'projects'}
+          badgeText={projectCount > 0 ? 'new' : 'soon'}
+        />
+      </div>
+
+      <TabLink
+        url={`https://github.com/kamranahmedse/developer-roadmap/issues/new/choose`}
+        icon={MessageCircle}
+        text='Suggest Changes'
+        isExternal={true}
+        hideTextOnMobile={true}
+      />
+    </div>
+  </div>
+</div>
