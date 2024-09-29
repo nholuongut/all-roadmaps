@@ -22,9 +22,9 @@
 
 # Roadmaps are now interactive, you can click the nodes to read more about the topics.
 
-### [View all Roadmaps public](public) &nbsp;&middot;&nbsp; [Best Practices with roadmaps](public/roadmaps) &nbsp;&middot;&nbsp;[Questions](https://www.linkedin.com/in/nholuong/);
+### [View all Roadmaps public](public) &nbsp;&middot;&nbsp; [Best Practices with roadmaps](public/roadmaps) &nbsp;&middot;&nbsp;[Questions](https://www.linkedin.com/in/nholuong/)
 
-# [Learning path on my repositories](https://github.com/nholuongut/)
+# [Can you find more learning path with more course on my repositories](https://github.com/nholuongut/)
 
 ![](https://i.imgur.com/waxVImv.png)
 
