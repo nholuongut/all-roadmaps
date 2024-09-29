@@ -1,7 +1,10 @@
+# Developer all Roadmaps
+## Browse the ever-growing list of up-to-date, Github repositories roadmaps by [Nho Luong](https://www.linkedin.com/in/nholuong/)
+![](https://i.imgur.com/waxVImv.png)
+
 <p align="center">
   <img src="public/images/brand.png" height="128">
-  <h2 align="center"><a href="https://ko-fi.com/nholuong">Nho Luong</a></h2>
-  <p align="center">Community driven roadmaps, articles and resources for developers<p>
+  <p align="center"><b>Community driven roadmaps, articles and resources for developers</b><p>
   <p align="center">
     <a href="https://github.com/nholuongut/all-roadmaps">
     	<img src="https://img.shields.io/badge/%E2%9C%A8-Roadmaps%20-0a0a0a.svg?style=flat&colorA=0a0a0a" alt="roadmaps" />
@@ -17,9 +20,14 @@
 
 <br>
 
+![](bitfield.png)
+
+
+[![Donate here](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/nholuong)
+
 ![](https://i.imgur.com/waxVImv.png)
 
-Roadmaps are now interactive, you can click the nodes to read more about the topics.
+# Roadmaps are now interactive, you can click the nodes to read more about the topics.
 
 ### [View all Roadmaps](https://github.com/nholuongut/all-roadmaps) &nbsp;&middot;&nbsp; [Best Practices](https://github.com/nholuongut/all-roadmaps/blob/main/public/best-practices/) &nbsp;&middot;&nbsp; [Questions](https://www.linkedin.com/in/nholuong/)
 
