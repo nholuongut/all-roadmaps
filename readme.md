@@ -1,6 +1,4 @@
 # Developer all Roadmaps
-## Browse the ever-growing list of up-to-date, Github repositories roadmaps by [Nho Luong](https://www.linkedin.com/in/nholuong/)
-![](https://i.imgur.com/waxVImv.png)
 
 <p align="center">
   <img src="public/images/brand.png" height="128">
