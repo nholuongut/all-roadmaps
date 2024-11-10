@@ -1,0 +1,22 @@
+---
+import AstroIcon from './AstroIcon.astro';
+import Icon from './AstroIcon.astro';
+import ResourceProgressStats from './ResourceProgressStats.astro';
+
+export interface Props {
+  roadmapId: string;
+  tnsBannerLink?: string;
+  titleQuestion?: string;
+  titleAnswer?: string;
+}
+
+const { roadmapId, tnsBannerLink } = Astro.props;
+const hasTnsBanner = !!tnsBannerLink;
+---
+
+<div class:list={['mb-0 rounded-md border mt-2 bg-white']}>
+  <ResourceProgressStats
+    resourceId={roadmapId}
+    resourceType='roadmap'
+  />
+</div>
